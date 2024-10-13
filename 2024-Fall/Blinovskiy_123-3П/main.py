@@ -7,9 +7,11 @@ from data_manage import get_data, get_first_last_date
 from graphs_manage import update_graph
 from mplwidget import MplWidget
 
+
 class MainWidget(QWidget):
     def __init__(self, width: int, height: int, parent=None):
         QWidget.__init__(self, parent)
+        self.win = None
         designer_file = QFile("mainWin.ui")
         designer_file.open(QFile.ReadOnly)
         loader = QUiLoader()
@@ -51,5 +53,3 @@ def start_program():
 
 if __name__ == "__main__":
     start_program()
-
-    
