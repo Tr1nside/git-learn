@@ -11,6 +11,7 @@ from mplwidget import MplWidget
 class MainWidget(QWidget):
     def __init__(self, width: int, height: int, parent=None):
         QWidget.__init__(self, parent)
+        self.win = None
         designer_file = QFile("mainWin.ui")
         designer_file.open(QFile.ReadOnly)
         loader = QUiLoader()
@@ -30,10 +31,13 @@ class MainWidget(QWidget):
         self.ui.ohataButton.clicked.connect(self.open_ohata)
         self.ui.updateButton.clicked.connect(lambda: update_graph(self))
 
-        self.dates = tuple  # Создаем пустой кортеж для хранения первой и последней даты
+        # Создаем пустой кортеж для хранения первой и последней даты
+        self.dates = tuple
         get_first_last_date(self)
         self.ui.timeEdit.setDateRange(self.dates[0], self.dates[1])
 
+        self.width = width
+        self.height = height
         self.data = get_data("./data_files/", "./data.txt")
         update_graph(self)
 
