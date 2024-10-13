@@ -11,7 +11,6 @@ from mplwidget import MplWidget
 class MainWidget(QWidget):
     def __init__(self, width: int, height: int, parent=None):
         QWidget.__init__(self, parent)
-        self.win = None
         designer_file = QFile("mainWin.ui")
         designer_file.open(QFile.ReadOnly)
         loader = QUiLoader()
