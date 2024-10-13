@@ -1,7 +1,6 @@
 import numpy as np
 
 
-
 def open_data():
     with open('data.txt', 'r') as file:
         lines = file.readlines()
@@ -33,8 +32,6 @@ def write_data(all_data: tuple, exception: str, file_path: str, data_idx: int):
         with open(file_path, 'w') as file:
             file.writelines(data[0].replace('\t', ',')[10:-20])
         file.close()
-    
-
 
 
 def create_mlb_txt():
