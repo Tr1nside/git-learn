@@ -17,7 +17,11 @@ class MainWidget(QWidget):
         loader.registerCustomWidget(MplWidget)
         self.ui = loader.load(designer_file, self)
         designer_file.close()
-        self.setMinimumSize(600, 400)
+
+        self.width = width
+        self.height = height
+
+        self.setMinimumSize(width // 2, height // 2)
         self.setWindowTitle("Фамилия И.О.")
 
         # Создаю layout и добавляю в него фреймы c объектами
@@ -25,6 +29,9 @@ class MainWidget(QWidget):
         self.setLayout(main_layout)
         main_layout.addWidget(self.ui.buttonsFrame)
         main_layout.addWidget(self.ui.frame_2)
+
+        if width > 1920:
+            self.ui.buttonsFrame.setStyleSheet("QWidget {font-size: 20px}")
 
         # Подключаем кнопки
         self.ui.ohataButton.clicked.connect(self.open_ohata)
@@ -39,6 +46,7 @@ class MainWidget(QWidget):
 
     def open_ohata(self):
         self.win = OhataWindow(self.width, self.height)
+        self.win.ui.setStyleSheet("QWidget {font-size: 20px}")
         self.win.show()
 
 

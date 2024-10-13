@@ -57,7 +57,6 @@ def check_date(self):
     time = int(self.ui.timeEdit.dateTime().toString("H:mm").replace(":", ""))
     if time % 5 == 0:
         flag = True
-    print(time)
     return flag
 
 
