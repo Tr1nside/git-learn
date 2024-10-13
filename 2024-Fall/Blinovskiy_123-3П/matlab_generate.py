@@ -1,6 +1,3 @@
-import numpy as np
-
-
 def open_data():
     with open('data.txt', 'r') as file:
         lines = file.readlines()
