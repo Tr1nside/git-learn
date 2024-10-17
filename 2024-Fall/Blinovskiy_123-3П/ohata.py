@@ -65,3 +65,5 @@ class OhataWindow(QWidget):
         )
 
         self.ui.lineEdit_power.setText(str(power))
+
+

@@ -4,7 +4,7 @@ date = importdata('date.txt');
 height = importdata('height.txt');
 
 try
-    input_date = input('Введите дату(01/10/2021 00:00:00): ', 's');
+    input_date = input('Введите дату(DD/MM/YYYY HH:MM:SS): ', 's');
     input_date_dt = datetime(input_date, 'InputFormat', 'dd/MM/yyyy HH:mm:ss');
     date_dt = datetime(date, 'InputFormat', 'dd/MM/yyyy HH/mm/ss');
 
@@ -23,7 +23,7 @@ try
         plot(x, y, 'DisplayName', 'Теоритическая');
         lgd = legend;
         lgd.FontSize = 14;
-        lgd.Title.String = 'Oct 2021';
+        lgd.Title.String = input_date;
     else
         disp('Неверно введена дата!');
     end
