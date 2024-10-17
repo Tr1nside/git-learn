@@ -18,7 +18,7 @@ def create_graph(self, temps: list, heights: list, last_temp: float):
 def update_graph(self):
     checks = check_date(self)
     if checks:
-        self.header_date = self.ui.timeEdit.dateTime().toString("dd.MM.yyyy HH:mm") 
+        self.header_date = self.ui.timeEdit.dateTime().toString("dd.MM.yyyy HH:mm")
         self.first_date = self.ui.timeEdit.dateTime().toString("dd/MM/yyyy HH:mm:ss")
         self.dt = refactoring_data(self)
         element = create_elements(self)
