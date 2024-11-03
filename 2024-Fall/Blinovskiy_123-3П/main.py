@@ -42,6 +42,8 @@ class MainWidget(QWidget):
         get_first_last_date(self)
         self.ui.timeEdit.setDateRange(self.dates[0], self.dates[1])
 
+        self.width = width
+        self.height = height
         self.data = get_data("./data_files/", "./data.txt")
         update_graph(self)
         create_mlb_txt()
